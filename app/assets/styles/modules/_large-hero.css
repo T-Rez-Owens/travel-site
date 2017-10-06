@@ -1,0 +1,61 @@
+.large-hero {
+    position: relative;
+    border-bottom: 10px solid $mainBlue;
+
+    &__image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__text-content{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title{
+        font-weight: 400;
+        color: #2f5572;
+        font-size: 1.8rem;
+        margin: 0;
+
+        @mixin atSmall{
+            font-size: 4.8rem;
+        }
+            
+        
+    }
+
+    &__subtitle{
+        font-weight: 300;
+        color: #2f5572;
+        font-size: 1.2rem;
+        margin: 0;
+
+        @mixin atSmall{
+            font-size: 2.9rem;
+        }
+    }
+    &__motto{
+        color: #FFF;
+        font-size: 1.4rem;
+        font-weight: 300;
+        text-shadow: 1px 1px rgba(0,0,0,.5);
+        max-width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        @mixin atSmall {
+            font-size: 1.875rem;
+            margin-top: 1rem;
+        }
+    }
+
+}
+
+
+
