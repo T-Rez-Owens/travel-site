@@ -69,10 +69,12 @@
 
 var Person = __webpack_require__(1);
 
+console.log("hello?");
+
 var john = new Person("John Doe", "Green");
-john.greet;
+john.greet();
 var jane = new Person("Jane Doe", "Green-blue");
-jane.greet;
+jane.greet();
 
 /***/ }),
 /* 1 */
@@ -83,7 +85,7 @@ function Person(fullName, favColor) {
     this.favColor = favColor;
     this.greet = function(){
         console.log("Hello my name is " + this.name + " and my favorite color is "+ this.favColor);
-    }
+    };
 }
 
 module.exports = Person;
