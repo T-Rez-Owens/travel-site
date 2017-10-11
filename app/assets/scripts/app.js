@@ -1,11 +1,16 @@
 var $ = require('jquery');
-var Person = require('./modules/Person');
+import Person from './modules/Person';
 
-alert("this is a test 1234");
+class Adult extends Person {
+    payTaxes() {
+        console.log(this.name+ " now owes $0 in taxes");
+    }
+}
+
 
 var john = new Person("John Doe", "Green");
 john.greet();
-var jane = new Person("Jane Doe", "Green-blue");
+var jane = new Adult("Jane Doe", "Green-orange");
 jane.greet();
-
-$('h1').remove();
+jane.payTaxes();
+//$('h1').remove();
