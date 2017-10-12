@@ -8,9 +8,11 @@
     @mixin atMedium{
         background-color: rgba(47, 85, 114, .3);
     }
+
     &--is-expanded {
         background-color:  rgba(47, 85, 114, .3);
     }
+
     &__btn{
         
         @mixin atMedium {
@@ -40,16 +42,70 @@
 
     &__menu-icon{
         width: 20px;
-        height: 20px;
-        background-color: #FFF;
+        height: 19px;
         position: absolute;
         z-index: 10;
         top: 10px;
         right: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: rgba(255,255,255,.7);
+            transform-origin: 0% 0%;
+            transition: all .3s ease-out;
+        }
+
+        &__middle {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: rgba(255,255,255,.7);
+            transition: all .3s ease-out;
+            transform-origin: 0% 50%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: rgba(255,255,255,.7);
+            transform-origin: 0% 100%;
+            transition: all .3s ease-out;
+        }
+
         @mixin atMedium{
             display: none;
         }
+
+        &--close-x {
+            &::before {
+                transform: translateX(2px) rotate(45deg) scaleX(1.25);
+                
+            }
+
+            .site-header__menu-icon__middle {
+                opacity: 0;
+                transform: scalex(0);
+            }
+
+            &::after {
+                transform: translateX(2px)  rotate(-45deg) scaleX(1.25) translateY(.5px);
+                
+            }
+        }
+        
     }
+
     &__menu-content{
         transform: scale(1.2);
         transition: all .3s ease-out;
