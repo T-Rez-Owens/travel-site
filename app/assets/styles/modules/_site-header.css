@@ -1,32 +1,40 @@
 .site-header{
+    padding: 10px 0;
     position: absolute;
     z-index: 2;
     width: 100%;
     
     transition: background-color .3s ease-out;
 
-    @mixin atMedium{
-        background-color: rgba(47, 85, 114, .3);
-    }
-
     &--is-expanded {
         background-color:  rgba(47, 85, 114, .3);
     }
+
+    @mixin atMedium{
+        background-color: rgba(47, 85, 114, .3);
+        position: fixed;
+
+        &--dark{
+            background-color: rgba(23, 51, 72, .85);
+        }
+    }
+
 
     &__btn{
         
         @mixin atMedium {
             float: right;
         }
-        
-
     }
+
+    
 
     &__logo{
         background-color: $mainBlue;
         top: 0;
         left: 50%;
         transform: translateX(-50%) scale(.8);
+        transition: transform .3s ease-out;
         transform-origin: 50% 0%;
         position: absolute;
         padding: 20px 30px; 
@@ -34,6 +42,9 @@
         @mixin atMedium{
             left: auto;
             transform: translateX(0);
+            .site-header--dark & {
+                transform: scale(.57);
+            }
         }
         &__graphic{
             text-indent: -9999px;   
