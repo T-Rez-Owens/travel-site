@@ -6,6 +6,10 @@
     margin-left: auto;
     margin-right: auto;
 
+    &--narrow {
+        max-width: 470px;
+    }
+
     &--medium {
         max-width: 976px;
     }
@@ -18,6 +22,7 @@
         }
         
     }
+
     &--no-padding-until-medium{
         padding-left:0;
         padding-right:0;
@@ -25,7 +30,8 @@
             padding-left: 18px;
             padding-right: 18px;
         }
-    }   
+    }
+
     &--no-padding-until-large{
         padding-left:0;
         padding-right:0;
@@ -34,6 +40,7 @@
             padding-right: 18px;
         }
     }
+    
     .wrapper{
         padding-left: 0;
         padding-right:0;
